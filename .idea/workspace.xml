@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7af3dcf-e90d-416e-8c44-c480e4c40595" name="Default Changelist" comment="" />
+    <list default="true" id="f7af3dcf-e90d-416e-8c44-c480e4c40595" name="Default Changelist" comment="Changed experience for Atreya Innovations">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/generic.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1eCG3WMPzpGEx4nuxLuXKHThyZc" />
   <component name="ProjectViewState">
@@ -15,6 +22,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../New folder" />
   </component>
@@ -45,13 +53,22 @@
       <workItem from="1595310317705" duration="42000" />
       <workItem from="1595310380434" duration="91000" />
       <workItem from="1595310510093" duration="6313000" />
+      <workItem from="1595318683328" duration="252000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed experience for Atreya Innovations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed experience for Atreya Innovations" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1595318921017">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1595318921017" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1595310953028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -120,5 +137,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="148" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1595317424931" />
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595318744067">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1595318744067" />
   </component>
 </project>
