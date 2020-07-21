@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<!--
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sumant's portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+	<script>
+			// source: https://codepen.io/hi-im-si/pen/DHoup
+			var TxtType = function(el, toRotate, period) {
+				this.toRotate = toRotate;
+				this.el = el;
+				this.loopNum = 0;
+				this.period = parseInt(period, 10) || 2000;
+				this.txt = '';
+				this.tick();
+				this.isDeleting = false;
+			};
+
+			TxtType.prototype.tick = function() {
+				var i = this.loopNum % this.toRotate.length;
+				var fullTxt = this.toRotate[i];
+
+				if (this.isDeleting) {
+					this.txt = fullTxt.substring(0, this.txt.length - 1);
+				} else {
+					this.txt = fullTxt.substring(0, this.txt.length + 1);
+				}
+
+				this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+				var that = this;
+				var delta = 200 - Math.random() * 100;
+
+				if (this.isDeleting) { delta /= 2; }
+
+				if (!this.isDeleting && this.txt === fullTxt) {
+					delta = this.period;
+					this.isDeleting = true;
+				} else if (this.isDeleting && this.txt === '') {
+					this.isDeleting = false;
+					this.loopNum++;
+					delta = 500;
+				}
+
+				setTimeout(function() {
+					that.tick();
+				}, delta);
+			};
+
+			window.onload = function() {
+				var elements = document.getElementsByClassName('typewrite');
+				for (var i=0; i<elements.length; i++) {
+					var toRotate = elements[i].getAttribute('data-type');
+					var period = elements[i].getAttribute('data-period');
+					if (toRotate) {
+						new TxtType(elements[i], JSON.parse(toRotate), period);
+					}
+				}
+
+				var css = document.createElement("style");
+				css.type = "text/css";
+				css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+				document.body.appendChild(css);
+			};
+	</script>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<div class="dp">
+							<img class="" src="./images/dp2.jpg">
+						</div>
+						<h1>Hello, I'm Sumant<br>
+							Welcome to my portfolio!</h1>
+						<p>A Software Engineer pursuing a Master's degree in Computer Science from Indiana University.<br>
+							Always enjoyed the most basic aspect of being an Engineer - building something!</p>
+
+						<a class="typewrite" data-period="1500" data-type='[ "Distributed Systems", "Cloud Services", "Web Services"]'>
+							<span class="wrap"></span>
+						</a>
+
+					</div>
+
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Projects</a></li>
+							<li><a href="generic.html">Professional Experience</a></li>
+							<li><a href="./Resume/Resume.pdf">Resume</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/sumantgaopande/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/Invictus17" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post
+							<article class="post featured">
+								<header class="major">
+									<span class="date">Jan - May 2020</span>
+									<h2><a href="https://github.com/Invictus17/RainCheck">RainCheck - wseather forecasting system</a></h2>
+									<p>A Distributed System that processes Nexrad radar data to computer precipitation graphs</p>
+									<p>Technology stack: Java Spring, React, Node.js, Python, HTML5, CSS</p>
+
+								</header>
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+								<ul class="actions special">
+									<li><a href="https://github.com/Invictus17/RainCheck" class="button large">View Code</a></li>
+								</ul>
+							</article>-->
+
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">Jan - May 2020</span>
+										<h2><a href="https://github.com/Invictus17/RainCheck">RainCheck - Weather Forecasting Distributed System<br/></a></h2>
+									</header>
+									<a class="image fit"><img src="images/RainCheck.png" alt="" /></a>
+									<p>Given an input of radar location and dates, this system computes a graph that describes the amount of expected rainfall in that region using Nexrad radar data.<br>
+										<br>
+										Designed a Fault tolerant and scalable microservice architecture for the system consisting of the following services:<br>
+
+										1. User management - A microservice that handled authentication, also to be used as a user registry.<br>
+										2. API Gateway - To create a single point of access to the system and it's utilities.<br>
+										3. Session Management - A microservice that stored user sessions and results.<br>
+										4. Data Ingestion - A microservice to acquire Nexrad radar data from an Amazon S3 bucket.<br>
+										5. Model Analysis and Post processing - These microservices were used to extract knowledge and compute precipitation graphs from the ingested data.<br>
+										<br>
+										Containerized all services using Docker and implemented a CI/CD pipeline for a Kubernetes cluster deployed on OpenStack cloud using Jenkins.<br>
+
+										Also, integrated Istio service mesh and exposed dashboards like Kiali and Grafana to gain visibility and Telemetry insights of the system.</p><br>
+									<p>Technology stack: Java Spring, Node.js, Python, React.js, MySQL, MongoDB, RabbitMQ, Jenkins, HTML, CSS, Docker, Kubernetes, Redis, OpenStack, Jetstream
+									</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/Invictus17/RainCheck" class="button large">View Code</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 2020</span>
+										<h2><a href="https://github.com/Invictus17/A-B-TestingWebApp">A/B Testing web application<br/></a></h2>
+									</header>
+									<a class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+									<p>
+
+										An Alpha-Beta testing web application where requests are evenly distributed between two versions of a webpage in A/B testing style. A user will get either a green or a violet webpage(equal probability to get either) and then will keep getting the same webpage unless cookies are destroyed. This can be used to drive user analytics for a web application.
+
+										Used Javascript and Cloudflare Workers api technologies to develop and deploy this application. You can view this application at:
+										<a href="https://sumantintern.sumant.workers.dev/">https://sumantintern.sumant.workers.dev/</a>
+									</p>
+									<p>Technology stack: Javascript, Cloudflare workers</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/Invictus17/A-B-TestingWebApp" class="button large">View Code</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">Dec 2019</span>
+										<h2><a href="https://github.com/Invictus17/FindTheHorizon">FindTheHorizon<br/></a></h2>
+									</header>
+									<a class="image fit"><img src="images/horizon.jpg" alt="" /></a>
+									<p>A Computer Vision utility that finds and paints the horizon in a given image using Baye's nets and the Viterbi algorithm. For every image, you can see the resulting horizon detected by the utility using - Baye's nets, Viterbi algorithm without feedback and Viterbi algorithm with human feedback i.e information of a pixel that is surely on the horizon.
+									</p>
+									<p>Language: Python</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/Invictus17/FindTheHorizon" class="button large">View Code</a></li>
+									</ul>
+								</article>
+
+								<article>
+									<header>
+										<span class="date">Aug - Dec 2019</span>
+										<h2><a href="https://github.com/Invictus17/NLP-Yelp-Restaurants">Business optimization with Yelp reviews<br/></a></h2>
+									</header>
+									<a class="image fit"><img src="images/yelp.jpg" alt="" /></a>
+									<p>
+										Implemented Topic Modelling using Latent Dirichlet Allocation (LDA), to find general complaints and negative feedback given by customers for restaurants, obtained from sentiment analysis. Grouped segments of restaurants based on cuisine, customer sentiment, user check-in patterns, pricing and other attributes to identify competitors using Hierarchical Clustering (Agglomerative) and recommended popular items/dishes in a restaurant that customers like using Named Entity recognition.
+									</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/Invictus17/NLP-Yelp-Restaurants" class="button large">View Code</a></li>
+									</ul>
+								</article>
+
+								<article>
+									<header>
+										<span class="date">Nov 2019</span>
+										<h2><a href="https://github.com/Invictus17/NeuralNetworkFromScratch">Neural Network From Scratch<br/></a></h2>
+									</header>
+									<a class="image fit"><img src="images/NN.jpg" alt="" /></a>
+									<p>
+										Predicted the class of object in the image out of 10 possible classes.
+
+
+
+
+										Used two dense hidden layer with 512 neurons. using RELU as the activation function and a Dropout with a value of 0.2.
+
+										Also used RMSprop for optimization.
+
+										and Softmax activation function for the output layer.
+									</p>
+									<p>
+										Testing accuarcy: 85 % <br>
+										Language: Python<br>
+										Dataset: Fashion MNIST dataset
+									</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/Invictus17/NeuralNetworkFromScratch" class="button large">View Code</a></li>
+									</ul>
+								</article>
+
+								<article>
+									<header>
+										<span class="date">Oct 2019</span>
+										<h2><a href="https://github.com/Invictus17/DecisionTree">Decision Tree<br/></a></h2>
+									</header>
+									<a class="image fit"><img src="images/DT.jpg" alt="" /></a>
+									<p>
+										A Decision Tree classifier to classify a given image into its correct orientation.<br>
+										Dataset: Flikr photo dataset, Number of classes: 4
+									</p>
+									<p>
+										Language: Python
+									</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/Invictus17/DecisionTree" class="button large">View Code</a></li>
+									</ul>
+								</article>
+							</section>
+
+						<!-- Footer -->
+						<footer>
+<!--								<div class="pagination">-->
+<!--									&lt;!&ndash;<a href="#" class="previous">Prev</a>&ndash;&gt;-->
+<!--									<a href="#" class="page active">1</a>-->
+<!--									<a href="#" class="page">2</a>-->
+<!--									<a href="#" class="page">3</a>-->
+<!--									<span class="extra">&hellip;</span>-->
+<!--									<a href="#" class="page">8</a>-->
+<!--									<a href="#" class="page">9</a>-->
+<!--									<a href="#" class="page">10</a>-->
+<!--									<a href="#" class="next">Next</a>-->
+<!--								</div>-->
+<!--							</footer>-->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section>
+								<h3>You can contact me on my LinkedIn profile or my GitHub</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/sumantgaopande/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/Invictus17" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>Design template: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
