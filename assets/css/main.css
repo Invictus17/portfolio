@@ -3303,7 +3303,10 @@ input, select, textarea {
 	}
 
 	.dp img {
-		margin-top: -10px;
+		margin-top: -193px;
+		margin-left: -236px;
+		height: 350%;
+		width: 350%;
 	}
 
 /* Intro */
